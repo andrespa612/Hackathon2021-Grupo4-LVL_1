@@ -10,6 +10,7 @@ namespace Hackaton_DAVH___AFPE
             bool reinicio = false;
             do
             {
+                reinicio = false;
                 Console.Clear();
                 Console.WriteLine("Listado de opciones: \n");
                 Console.WriteLine("1 - Laberinto");
@@ -313,14 +314,14 @@ namespace Hackaton_DAVH___AFPE
                 Console.ReadLine();
                 if (!reinicio)
                 {
-                    continuar:
+                continuar:
                     Console.WriteLine("Desea volver al menú? (S/N)");
-                    if(Console.ReadLine() == "S")
+                    if (Console.ReadLine().ToUpper() == "S")
                     {
                         reinicio = true;
                         Console.Clear();
                     }
-                    else if(Console.ReadLine() != "N")
+                    else if (Console.ReadLine().ToUpper() != "N")
                     {
                         goto continuar;
                     }
