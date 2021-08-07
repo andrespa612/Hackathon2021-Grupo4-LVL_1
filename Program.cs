@@ -68,22 +68,38 @@ namespace Hackaton_DAVH___AFPE
                                 int posy = 0;
                                 if(mapa[0,0] != "*" && mapa[19,19] != "*")
                                 {
-                                    while(posx != 19 && posy != 19)
+                                    while(posx != 19 || posy != 19)
                                     {
-                                        if(mapa[posx, posy + 1] == "*")
+                                        if(posy != 19)
                                         {
-                                            posx++;
-                                            recorrido += posx + "," + posy + ";";
-                                        }
-                                        else if(mapa[posx + 1, posy] == "*")
-                                        {
-                                            posy++;
-                                            recorrido += posx + "," + posy + ";";
+                                            if (mapa[posx, posy + 1] == "*")
+                                            {
+                                                posx++;
+                                                recorrido += posx + "," + posy + ";";
+                                            }
+                                            else if (mapa[posx + 1, posy] == "*")
+                                            {
+                                                posy++;
+                                                recorrido += posx + "," + posy + ";";
+                                            }
+                                            else
+                                            {
+                                                posx++;
+                                                recorrido += posx + "," + posy + ";";
+                                            }
                                         }
                                         else
                                         {
-                                            posx++;
-                                            recorrido += posx + "," + posy + ";";
+                                            if (mapa[posx + 1, posy] == "*")
+                                            {
+                                                posy++;
+                                                recorrido += posx + "," + posy + ";";
+                                            }
+                                            else
+                                            {
+                                                posx++;
+                                                recorrido += posx + "," + posy + ";";
+                                            }
                                         }
                                     }
                                     Console.WriteLine("Esta es la solución:");
