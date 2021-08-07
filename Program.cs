@@ -241,7 +241,7 @@ namespace Hackaton_DAVH___AFPE
                                 double result1 = 0, result2 = 0;
                                 try
                                 {
-                                    result1 = ( - b + Math.Sqrt(Math.Pow(b, 2) - 4 * a * c)) / 2 * a;
+                                    result1 = (-b + Math.Sqrt((Math.Pow(b, 2)) - (4 * a * c))) / (2 * a);
                                     Console.WriteLine("Solución 1: " + result1);
                                 }
                                 catch
@@ -250,7 +250,7 @@ namespace Hackaton_DAVH___AFPE
                                 }
                                 try
                                 {
-                                    result2 = (-b - Math.Sqrt(Math.Pow(b, 2) - 4 * a * c)) / 2 * a;
+                                    result2 = (-b - Math.Sqrt(Math.Pow(b, 2) - 4 * a * c)) / (2 * a);
                                     Console.WriteLine("Solución 1: " + result2);
                                 }
                                 catch
