@@ -133,7 +133,7 @@ namespace Hackaton_DAVH___AFPE
                                         int cont = 1;
                                         for (int j = 0; j < Convert.ToInt32(arregloFig[1]); j++)
                                         {
-                                            for (int a = 0; a < cont; a++)
+                                            for (int x = 0; x < cont; x++)
                                             {
                                                 Console.Write("*");
                                             }
@@ -148,15 +148,15 @@ namespace Hackaton_DAVH___AFPE
                                         if(baseP % 2 != 0)
                                         {
                                             int posicion = baseP / 2;
-                                            for(int b = 0; b < (baseP / 2 + 1); b++)
+                                            for(int y = 0; y < (baseP / 2 + 1); y++)
                                             {
-                                                cant = 1 + 2 * b;
-                                                for(int a = 0; a < posicion; a++)
+                                                cant = 1 + 2 * y;
+                                                for(int x = 0; x < posicion; x++)
                                                 {
                                                     Console.Write(" ");
                                                 }
                                                 posicion--;
-                                                for(int c = 0; c < cant; c++)
+                                                for(int z = 0; z < cant; z++)
                                                 {
                                                     Console.Write("*");
                                                 }
@@ -176,17 +176,17 @@ namespace Hackaton_DAVH___AFPE
                                         if (largo % 2 != 0)
                                         {
                                             int posicion = largo / 2;
-                                            for (int b = 0; b < largo; b++)
+                                            for (int y = 0; y < largo; y++)
                                             {
-                                                for (int a = 0; a < posicion; a++)
+                                                for (int x = 0; x < posicion; x++)
                                                 {
                                                     Console.Write(" ");
                                                 }
-                                                for (int c = 0; c < cantR; c++)
+                                                for (int z = 0; z < cantR; z++)
                                                 {
                                                     Console.Write("*");
                                                 }
-                                                if (b < (largo / 2))
+                                                if (y < (largo / 2))
                                                 {
                                                     posicion--;
                                                     cantR = cantR + 2;
@@ -233,13 +233,30 @@ namespace Hackaton_DAVH___AFPE
                         Console.WriteLine("Ingrese los coeficientes de los terminos separados por comas:");
                         string entrada = Console.ReadLine();
                         string[] terminos = entrada.Split(",");
-                        int tcuadrado, tlineal, independiente;
+                        int a, b, c;
                         if(terminos.Length == 3)
                         {
-                            if(int.TryParse(terminos[0], out tcuadrado) && int.TryParse(terminos[1], out tlineal) && int.TryParse(terminos[2], out independiente))
+                            if(int.TryParse(terminos[0], out a) && int.TryParse(terminos[1], out b) && int.TryParse(terminos[2], out c))
                             {
-                                double result1, result2;
-
+                                double result1 = 0, result2 = 0;
+                                try
+                                {
+                                    result1 = ( - b + Math.Sqrt(Math.Pow(b, 2) - 4 * a * c)) / 2 * a;
+                                    Console.WriteLine("Solución 1: " + result1);
+                                }
+                                catch
+                                {
+                                    Console.WriteLine("Solución 1 no exite.");
+                                }
+                                try
+                                {
+                                    result2 = (-b - Math.Sqrt(Math.Pow(b, 2) - 4 * a * c)) / 2 * a;
+                                    Console.WriteLine("Solución 1: " + result2);
+                                }
+                                catch
+                                {
+                                    Console.WriteLine("Solución 2 no exite.");
+                                }
                             }
                             else
                             {
